@@ -17,7 +17,7 @@ on:
     - release/*
 
 jobs:
-  build:
+  WebCI:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
