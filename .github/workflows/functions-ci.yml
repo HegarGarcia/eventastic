@@ -1,0 +1,30 @@
+name: Cloud Funcions CI
+
+on:
+  push:
+    paths: 
+      - functions/*
+    branches: 
+    - dev
+    - feature/*
+    - hotfix/*
+  pull_request:
+    paths: 
+      - functions/*
+    branches: 
+    - master
+    - dev
+    - release/*
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v1
+    - name: Install dependencies
+      working-directory: functions
+      run: npm ci
+    - name: Run tests
+      working-directory: functions
+      run: npm test
