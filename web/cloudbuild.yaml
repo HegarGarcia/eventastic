@@ -1,17 +1,23 @@
 steps:
-  - id: "Install dependencies"
+  - id: Install dependencies
     name: node
     entrypoint: npm
     dir: "./web"
     args: ["install"]
 
-  - id: "Running tests"
+  - id: Running tests
     name: node
     entrypoint: npm
     dir: "./web"
     args: ["test", "--passWithNoTests"]
     env:
       - "CI=true"
+
+  - id: Build app
+    name: node
+    entrypoint: npm
+    dir: "./web"
+    args: ["build"]
 
   - id: Deploying to Firebase
     name: "gcr.io/$PROJECT_ID/firebase"
