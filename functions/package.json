@@ -2,6 +2,7 @@
   "name": "eventastic-functions",
   "description": "Cloud Functions for Eventastic App",
   "scripts": {
+    "lint": "eslint .",
     "start": "firebase emulators:start --only functions",
     "test": "jest"
   },
