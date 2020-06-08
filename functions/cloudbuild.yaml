@@ -9,7 +9,7 @@ steps:
     name: node
     entrypoint: npm
     dir: "./functions"
-    args: ["test", "--passWithNoTests"]
+    args: ["test", "--", "--passWithNoTests"]
 
   - id: Deploying to Firebase
     name: "gcr.io/$PROJECT_ID/firebase"
