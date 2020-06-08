@@ -3,14 +3,14 @@ name: Web CI
 on:
   push:
     paths: 
-      - web/*
+      - web/**
     branches: 
     - dev
     - feature/*
     - hotfix/*
   pull_request:
     paths: 
-      - web/*
+      - web/**
     branches: 
     - master
     - dev
