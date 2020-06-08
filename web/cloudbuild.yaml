@@ -2,13 +2,13 @@ steps:
   - id: "Install dependencies"
     name: node
     entrypoint: npm
-    dir: "./functions"
+    dir: "./web"
     args: ["install"]
 
   - id: "Running tests"
     name: node
     entrypoint: npm
-    dir: "./functions"
+    dir: "./web"
     args: ["test", "--passWithNoTests"]
     env:
       - "CI=true"
