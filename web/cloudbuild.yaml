@@ -1,0 +1,18 @@
+steps:
+  - id: "Install dependencies"
+    name: node
+    entrypoint: npm
+    dir: "./functions"
+    args: ["install"]
+
+  - id: "Running tests"
+    name: node
+    entrypoint: npm
+    dir: "./functions"
+    args: ["test", "--passWithNoTests"]
+    env:
+      - "CI=true"
+
+  - id: Deploying to Firebase
+    name: "gcr.io/$PROJECT_ID/firebase"
+    args: ["deploy", "--project=$PROJECT_ID", "--only=hosting"]
