@@ -17,7 +17,7 @@ steps:
     name: node
     entrypoint: npm
     dir: "./web"
-    args: ["build"]
+    args: ["run", "build"]
 
   - id: Deploying to Firebase
     name: "gcr.io/$PROJECT_ID/firebase"
