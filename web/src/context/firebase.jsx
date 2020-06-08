@@ -8,16 +8,14 @@ const app = firebase.initializeApp(config);
 
 export const FirebaseContext = createContext({
   firestore: app.firestore(),
-  auth: app.auth(),
-  storage: app.storage()
+  auth: app.auth()
 });
 
 const FirebaseProvider = ({ children }) => (
   <FirebaseContext.Provider
     value={{
       firestore: app.firestore(),
-      auth: app.auth(),
-      storage: app.storage()
+      auth: app.auth()
     }}
   >
     {children}
