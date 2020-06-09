@@ -1,10 +1,6 @@
 import React from 'react';
-import FirebaseProvider from './context/firebase';
+import Router from './router/Router';
 
-const App = () => (
-  <FirebaseProvider>
-    <h1>App</h1>
-  </FirebaseProvider>
-);
+const App = () => <Router />;
 
 export default App;
