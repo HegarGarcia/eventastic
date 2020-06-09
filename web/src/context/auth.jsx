@@ -39,30 +39,33 @@ const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     auth.onAuthStateChanged(setUser);
-  }, []);
+  }, [auth]);
 
   const signOut = useCallback(async () => {
     await auth.signOut();
-  }, []);
+  }, [auth]);
 
-  const loginWithEmailAndPassword = useCallback(async ({ email, password }) => {
-    try {
-      await auth.signInWithEmailAndPassword(email, password);
-    } catch (error) {
-      switch (error.code) {
-        case 'auth/invalid-email':
-          throw new AuthError('Invalid email');
-        case 'auth/user-disabled':
-          throw new AuthError('User disabled');
-        case 'auth/user-not-found':
-          throw new AuthError('User not found');
-        case 'auth/wrong-password':
-          throw new AuthError('Wrong password');
-        default:
-          throw new AuthError('Unknown error');
+  const loginWithEmailAndPassword = useCallback(
+    async ({ email, password }) => {
+      try {
+        await auth.signInWithEmailAndPassword(email, password);
+      } catch (error) {
+        switch (error.code) {
+          case 'auth/invalid-email':
+            throw new AuthError('Invalid email');
+          case 'auth/user-disabled':
+            throw new AuthError('User disabled');
+          case 'auth/user-not-found':
+            throw new AuthError('User not found');
+          case 'auth/wrong-password':
+            throw new AuthError('Wrong password');
+          default:
+            throw new AuthError('Unknown error');
+        }
       }
-    }
-  }, []);
+    },
+    [auth]
+  );
 
   const loginWithGoogle = useCallback(async () => {
     const googleProvider = new firebase.auth.GoogleAuthProvider();
@@ -90,7 +93,7 @@ const AuthProvider = ({ children }) => {
           throw new AuthError();
       }
     }
-  }, []);
+  }, [auth]);
 
   const signUpWithEmailAndPassword = useCallback(
     async ({ email, password }) => {
@@ -118,7 +121,7 @@ const AuthProvider = ({ children }) => {
         await signOut();
       }
     },
-    []
+    [auth, signOut]
   );
 
   return (
