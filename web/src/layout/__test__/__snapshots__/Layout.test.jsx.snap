@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<App /> spec Should not regress 1`] = `
+exports[`<Layout /> spec Should not regress 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
@@ -53,7 +53,9 @@ Object {
         <main
           data-testid="main-content"
         >
-          
+          <h1>
+            body
+          </h1>
         </main>
       </div>
     </div>
@@ -107,7 +109,9 @@ Object {
       <main
         data-testid="main-content"
       >
-        
+        <h1>
+          body
+        </h1>
       </main>
     </div>
   </div>,
