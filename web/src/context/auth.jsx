@@ -1,12 +1,7 @@
-import React, {
-  createContext,
-  useContext,
-  useCallback,
-  useState,
-  useEffect
-} from 'react';
+// eslint-disable-next-line object-curly-newline
+import React, { createContext, useCallback, useState, useEffect } from 'react';
 import firebase from 'firebase';
-import { FirebaseContext } from './firebase';
+import useFirebase from '../hook/firebase';
 
 class AuthError extends Error {
   constructor(messsage) {
@@ -34,7 +29,7 @@ export const AuthContext = createContext({
 });
 
 const AuthProvider = ({ children }) => {
-  const { auth } = useContext(FirebaseContext);
+  const { auth } = useFirebase();
   const [user, setUser] = useState(auth.currentUser);
 
   useEffect(() => {
