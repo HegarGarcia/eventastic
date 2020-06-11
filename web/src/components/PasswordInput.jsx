@@ -25,10 +25,9 @@ const PasswordInput = memo(
 
     return (
       <FormControl fullWidth variant="outlined">
-        <InputLabel htmlFor="password">{label}</InputLabel>
+        <InputLabel>{label}</InputLabel>
         <OutlinedInput
           name={name}
-          id="password"
           type={visibility ? 'text' : 'password'}
           onChange={onChange}
           endAdornment={adornment}
