@@ -6,7 +6,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="sc-AxjAm dUWJPr"
+        class="sc-AxjAm cPuDWf"
       >
         <header
           class="MuiPaper-root MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary MuiPaper-elevation4"
@@ -62,7 +62,7 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="sc-AxjAm dUWJPr"
+      class="sc-AxjAm cPuDWf"
     >
       <header
         class="MuiPaper-root MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary MuiPaper-elevation4"

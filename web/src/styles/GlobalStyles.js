@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GloablStyles = createGlobalStyle`
-  html, body{
+  html, body, div#root{
     width: 100vw;
     height: 100vh;
     padding: 0;

@@ -16,6 +16,7 @@ const LayoutContainer = styled.div`
 
   & > main {
     grid-area: main;
+    height: 100%;
   }
 `;
 
