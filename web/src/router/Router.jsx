@@ -7,6 +7,7 @@ import Layout from '../layout/Layout';
 
 const HomePage = lazy(() => import('../pages/Home'));
 const SignInPage = lazy(() => import('../pages/SignIn'));
+const SignUpPage = lazy(() => import('../pages/SignUp'));
 
 const Router = () => (
   <BrowserRouter>
@@ -14,8 +15,9 @@ const Router = () => (
       <Layout>
         <Suspense fallback="">
           <Switch>
-            <RestrictedRoute to="/signin" exact component={SignInPage} />
-            <PublicRoute to="/" exact component={HomePage} />
+            <RestrictedRoute path="/signin" exact component={SignInPage} />
+            <RestrictedRoute path="/signup" exact component={SignUpPage} />
+            <PublicRoute path="/" exact component={HomePage} />
           </Switch>
         </Suspense>
       </Layout>

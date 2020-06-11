@@ -5,10 +5,8 @@ import useAuth from '../hook/auth';
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
   const { user } = useAuth();
-  // eslint-disable-next-line prettier/prettier
-  const render = (props) => (user ? <Component {...props} /> : <Redirect to="/" />);
 
-  return <Route {...rest} render={render} />;
+  return <Route {...rest}>{user ? <Component /> : <Redirect to="/" />}</Route>;
 };
 
 export default PrivateRoute;

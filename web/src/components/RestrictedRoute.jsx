@@ -6,12 +6,7 @@ import useAuth from '../hook/auth';
 const RestrictedRoute = ({ component: Component, ...rest }) => {
   const { user } = useAuth();
 
-  return (
-    <Route
-      {...rest}
-      render={(props) => (user ? <Redirect to="" /> : <Component {...props} />)}
-    />
-  );
+  return <Route {...rest}>{user ? <Redirect to="" /> : <Component />}</Route>;
 };
 
 export default RestrictedRoute;
